@@ -23,6 +23,7 @@ def name_generator():
     lst_name = ''.join(random.choice(letters) for i in range(10))
     return f"{frs_name} {lst_name}"
 
+# сделал красиво и вынес сюда создание нового пользователя
 def payload_new_user():
     new_user = {
         "email": mail_generator(),

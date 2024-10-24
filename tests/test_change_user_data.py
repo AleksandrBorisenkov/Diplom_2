@@ -20,7 +20,7 @@ class TestChangeUserData:
     def test_unauthorized_user_change_data(self):
         patch_email = {"email": mail_generator()}
         change_profile_data = requests.patch(patch_change_user_data, headers={"authorization": ""}, data=patch_email)
-        assert change_profile_data.json() == data.user_error_401_unauthorized_change_data and change_profile_data.status_code == 401
+        assert change_profile_data.json() == data.user_error_401_unauthorized_user and change_profile_data.status_code == 401
 
     @allure.title('Создаем, логинемся, изменяем имя пользователя. Потом удаляем пользователя. Ожидаем успех 200 и 202')
     def test_chage_profile_name_true(self):
