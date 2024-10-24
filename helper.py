@@ -1,6 +1,7 @@
 import random
 
-# сгенерирровали почту
+# простейшие генераторы
+# сгенерировали почту
 def mail_generator():
     letters = 'qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM'
     name = ''.join(random.choice(letters) for i in range(10))
@@ -21,3 +22,11 @@ def name_generator():
     frs_name = ''.join(random.choice(letters) for i in range(10))
     lst_name = ''.join(random.choice(letters) for i in range(10))
     return f"{frs_name} {lst_name}"
+
+def payload_new_user():
+    new_user = {
+        "email": mail_generator(),
+        "password": password_generator(),
+        "name": name_generator()
+        }
+    return new_user
